@@ -8,8 +8,8 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 app.use(express.static(__dirname+'/public'))
-app.use('/api/productos', routesProductos)
-app.use('/api/productos', routesProductosId)
+app.use('/api', routesProductos)
+app.use('/api', routesProductosId)
 
 
 const PORT = 8080;
