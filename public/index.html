@@ -26,20 +26,20 @@
     //  -Las respuestas del servidor seran en formato JSON. La funcionalidad sera probada a traves de POSTMAN
     //   y del formulario de ingreso -->
 
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <form action="/api/productos" method="post">
-        title: <input type="text" name="title">
-        price: <input type="number" name="price">
-        thumbnail : <input type="text" name="thumbnail">
-        <button>Agregar producto</button>
+      <input type="text" name="title" placeholder="Title" />
+      <input type="number" name="price" placeholder="Price" />
+      <input type="text" name="thumbnail" placeholder="Thumbnail" />
+      <button>Agregar producto</button>
     </form>
-</body>
+  </body>
 </html>

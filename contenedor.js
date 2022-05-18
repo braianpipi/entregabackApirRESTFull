@@ -1,14 +1,20 @@
 class Contenedor {
   constructor() {
-    let productos = [] ;
+    this.productos = [];
   }
   save(objeto) {
-    let idUltimo =[]
-    if(productos.length === 0){
-      return idUltimo.push(1)
-    }else{
-
-      idUltimo = productos.map((producto) => producto.id);
+    if (this.productos.length === 0) {
+      objeto = {
+        id : 1,
+        title : objeto.title,
+        price : objeto.price,
+        thumbnail : objeto.thumbnail
+      };
+      this.productos.push(objeto);
+      return objeto 
+    } else {
+      
+      let idUltimo = this.productos.map((producto) => producto.id);
       let idAsignado = Math.max(...idUltimo);
       idAsignado++;
       objeto = {
@@ -17,22 +23,21 @@ class Contenedor {
         price: objeto.price,
         thumbnail: objeto.thumbnail,
       };
+      this.productos.push(objeto);
+      return objeto;
     }
-    productos.push(objeto);
-    return objeto;
   }
-
+  getAll(){
+    return this.productos;
+  }
   getById(idBuscado) {
-    let productoId = contenedor.find(
-      (producto) => producto.id === idBuscado
-    );
-    if(productoId === undefined){
-       return res.json({error :'producto no encontrado'})
+    let productoId = this.productos.find((producto) => producto.id === idBuscado);
+    if (productoId === undefined) {
+      return res.json({ error: "producto no encontrado" });
     }
-    return res.json({"Producto Id": productoId})
-    }
-
-
+    return res.json({ "Producto Id": productoId });
+  }
 }
-let contenedor = new Contenedor();
-module.exports = contenedor;
+
+
+module.exports = Contenedor;
